@@ -1,0 +1,157 @@
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: 2px solid #e5e4e7;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b6375;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #aa3bff;
+  color: #aa3bff;
+}
+
+.filter-btn.active {
+  background: #aa3bff;
+  border-color: #aa3bff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portfolio-card {
+  background: #fff;
+  border: 1px solid #e5e4e7;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-thumb {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-icon {
+  font-size: 40px;
+  font-weight: 800;
+  font-family: monospace;
+  opacity: 0.7;
+}
+
+.portfolio-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.portfolio-category {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aa3bff;
+}
+
+.portfolio-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #08060d;
+  margin: 6px 0 8px;
+}
+
+.portfolio-desc {
+  font-size: 14px;
+  color: #6b6375;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.portfolio-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tech-tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  background: rgba(170, 59, 255, 0.08);
+  color: #aa3bff;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.portfolio-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .filter-btn {
+    border-color: #2e303a;
+    color: #9ca3af;
+  }
+  .filter-btn:hover {
+    border-color: #c084fc;
+    color: #c084fc;
+  }
+  .filter-btn.active {
+    background: #c084fc;
+    border-color: #c084fc;
+    color: #fff;
+  }
+  .portfolio-card {
+    background: #1f2028;
+    border-color: #2e303a;
+  }
+  .portfolio-title { color: #f3f4f6; }
+  .portfolio-desc { color: #9ca3af; }
+  .portfolio-category { color: #c084fc; }
+  .tech-tag {
+    background: rgba(192, 132, 252, 0.12);
+    color: #c084fc;
+  }
+}
