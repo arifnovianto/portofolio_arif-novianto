@@ -1,39 +1,92 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Service', href: '#service' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Resume', href: '#resume' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home',       href: '#home' },
+  { label: 'About',      href: '#about' },
+  { label: 'Service',    href: '#service' },
+  { label: 'Portfolio',  href: '#portfolio' },
+  { label: 'Resume',     href: '#resume' },
+  { label: 'Sertifikat', href: '#sertifikat' },
+  { label: 'Contact',    href: '#contact' },
 ]
 
 export default function Navbar() {
-  const [active, setActive] = useState('Home')
+  const [active, setActive]     = useState('Home')
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const isClickScrolling        = useRef(false) // flag agar klik tidak konflik dengan observer
 
+  // ── Deteksi scroll untuk efek navbar ──────────────────────────
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // ── IntersectionObserver — update active saat scroll ──────────
+  useEffect(() => {
+    const sectionIds = navLinks.map(l => l.href.slice(1)) // ['home','about',...]
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Abaikan selama smooth-scroll dari klik
+        if (isClickScrolling.current) return
+
+        // Ambil section yang paling banyak terlihat
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+        if (visible.length > 0) {
+          const id    = visible[0].target.id
+          const found = navLinks.find(l => l.href === `#${id}`)
+          if (found) setActive(found.label)
+        }
+      },
+      {
+        // Section dianggap aktif saat 30% area-nya terlihat
+        // rootMargin negatif atas agar navbar tidak menutupi deteksi
+        rootMargin: '-64px 0px -40% 0px',
+        threshold: [0, 0.1, 0.3, 0.5],
+      }
+    )
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  // ── Klik menu ─────────────────────────────────────────────────
   const handleNav = (label, href) => {
     setActive(label)
     setMenuOpen(false)
+
     const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (!el) return
+
+    // Tandai sedang klik-scroll agar observer tidak override
+    isClickScrolling.current = true
+    el.scrollIntoView({ behavior: 'smooth' })
+
+    // Setelah animasi scroll selesai (~800ms), biarkan observer jalan lagi
+    setTimeout(() => { isClickScrolling.current = false }, 900)
   }
 
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="navbar-container">
-        <a className="navbar-logo" href="#home" onClick={() => handleNav('Home', '#home')}>
-          <span className="logo-text">Arif Novianto<span className="accent"></span></span>
+        <a
+          className="navbar-logo"
+          href="#home"
+          onClick={(e) => { e.preventDefault(); handleNav('Home', '#home') }}
+        >
+          <span className="logo-text">
+            Arif<span className="accent"> Novianto</span>
+          </span>
         </a>
 
         <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
@@ -42,10 +95,7 @@ export default function Navbar() {
               <a
                 href={href}
                 className={active === label ? 'active' : ''}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNav(label, href)
-                }}
+                onClick={(e) => { e.preventDefault(); handleNav(label, href) }}
               >
                 {label}
               </a>
@@ -55,7 +105,7 @@ export default function Navbar() {
 
         <button
           className={`hamburger${menuOpen ? ' open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen(o => !o)}
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >

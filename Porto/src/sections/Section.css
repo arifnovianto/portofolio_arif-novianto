@@ -1,103 +1,94 @@
-/* Shared section styles */
+/* ===== Shared section styles — dark teal theme ===== */
 .section {
-  padding: 90px 32px;
+  min-height: 100vh;
+  padding: 80px 32px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-inner {
   max-width: 1062px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 44px;
 }
 
 .section-tag {
   display: inline-block;
-  background: rgba(170, 59, 255, 0.1);
-  color: #aa3bff;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  background: rgba(29, 200, 200, 0.1);
+  color: #1dc8c8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 6px 14px;
+  padding: 4px 14px;
   border-radius: 20px;
+  border: 1px solid rgba(29, 200, 200, 0.25);
   margin-bottom: 12px;
 }
 
 .section-title {
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 800;
-  color: #08060d;
+  color: #d6eef2;
   margin: 0;
-  letter-spacing: -0.8px;
+  letter-spacing: -0.5px;
 }
 
 .section-subtitle {
-  font-size: 17px;
-  color: #6b6375;
-  margin: 12px 0 0;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+  font-size: 15px;
+  color: #8ab4be;
+  margin: 12px auto 0;
+  max-width: 500px;
+  line-height: 1.7;
 }
 
-/* Separator */
+/* Divider antar section */
 .section + .section {
-  border-top: 1px solid #e5e4e7;
+  border-top: 1px solid rgba(29, 200, 200, 0.07);
 }
 
-/* Button shared */
+/* ===== Shared buttons ===== */
 .btn {
-  padding: 13px 28px;
+  padding: 11px 26px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1.5px solid transparent;
 }
 .btn-primary {
-  background: #aa3bff;
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(170, 59, 255, 0.3);
+  background: #1dc8c8;
+  color: #0a1a20;
+  box-shadow: 0 4px 20px rgba(29, 200, 200, 0.3);
 }
 .btn-primary:hover {
-  background: #9325e8;
+  background: #22e0e0;
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(170, 59, 255, 0.4);
+  box-shadow: 0 8px 28px rgba(29, 200, 200, 0.45);
 }
 .btn-outline {
   background: transparent;
-  color: #aa3bff;
-  border-color: #aa3bff;
+  color: #1dc8c8;
+  border-color: rgba(29, 200, 200, 0.4);
 }
 .btn-outline:hover {
-  background: rgba(170, 59, 255, 0.08);
+  background: rgba(29, 200, 200, 0.08);
+  border-color: #1dc8c8;
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 64px 20px;
-  }
-  .section-title {
-    font-size: 28px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .section-title { color: #f3f4f6; }
-  .section-subtitle { color: #9ca3af; }
-  .section + .section { border-top-color: #2e303a; }
-  .section-tag {
-    background: rgba(192, 132, 252, 0.15);
-    color: #c084fc;
-  }
+  .section { padding: 80px 20px; min-height: 100vh; }
+  .section-title { font-size: 26px; }
 }
