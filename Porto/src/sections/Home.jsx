@@ -54,7 +54,7 @@ export default function Home() {
         </p>
         <div className="home-actions">
           <a href="#contact" className="btn btn-primary">Hubungi Saya</a>
-          <a href="#portfolio" className="btn btn-outline">Lihat Portfolio</a>
+          <a href="/CV_ARIF NOVIANTO.pdf" download className="btn btn-outline">Download CV</a>
         </div>
       </div>
       <div className="home-image">

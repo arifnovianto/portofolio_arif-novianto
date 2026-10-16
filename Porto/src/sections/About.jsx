@@ -14,7 +14,6 @@ export default function About() {
     <section id="about" className="section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-tag">Tentang Saya</span>
           <h2 className="section-title">Kenali Saya Lebih Dekat</h2>
         </div>
 
@@ -35,7 +34,6 @@ export default function About() {
               <div className="info-item"><span>Lokasi</span><strong>Indonesia</strong></div>
               <div className="info-item"><span>Status</span><strong>Tersedia untuk hire</strong></div>
             </div>
-            <a href="#contact" className="btn btn-primary">Download CV</a>
           </div>
 
           <div className="about-skills">
