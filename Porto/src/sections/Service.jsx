@@ -3,14 +3,14 @@ import './Service.css'
 
 const services = [
   {
-    icon: '🎨',
-    title: 'UI/UX Design',
-    desc: 'Merancang tampilan antarmuka yang menarik, intuitif, dan berpusat pada pengalaman pengguna terbaik.',
-  },
-  {
     icon: '💻',
     title: 'Web Development',
     desc: 'Membangun website modern yang responsif menggunakan teknologi terkini seperti React dan Vite.',
+  },
+  {
+    icon: '🎨',
+    title: 'UI/UX Design',
+    desc: 'Merancang tampilan antarmuka yang menarik, intuitif, dan berpusat pada pengalaman pengguna terbaik.',
   },
   {
     icon: '📱',
@@ -18,19 +18,9 @@ const services = [
     desc: 'Memastikan website tampil sempurna di semua perangkat, dari desktop hingga mobile.',
   },
   {
-    icon: '⚡',
-    title: 'Performance Optimization',
-    desc: 'Mengoptimalkan kecepatan dan performa website untuk memberikan pengalaman terbaik.',
-  },
-  {
     icon: '🔧',
     title: 'Web Maintenance',
     desc: 'Menyediakan layanan pemeliharaan dan pembaruan website agar selalu berjalan optimal.',
-  },
-  {
-    icon: '🚀',
-    title: 'Deployment & Hosting',
-    desc: 'Membantu proses deployment dan konfigurasi hosting website ke berbagai platform.',
   },
 ]
 

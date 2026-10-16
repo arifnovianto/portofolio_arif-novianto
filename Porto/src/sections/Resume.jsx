@@ -90,7 +90,7 @@ export default function Resume() {
         </div>
 
         <div className="resume-cta">
-          <a href="#" className="btn btn-primary">Download CV Lengkap</a>
+          <a href="/CV_ARIF NOVIANTO.pdf" download className="btn btn-primary">Download CV Lengkap</a>
         </div>
       </div>
     </section>

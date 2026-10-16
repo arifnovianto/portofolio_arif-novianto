@@ -2,11 +2,11 @@ import './Section.css'
 import './About.css'
 
 const skills = [
-  { name: 'HTML / CSS', level: 90 },
+  
   { name: 'JavaScript', level: 85 },
   { name: 'React JS', level: 80 },
-  { name: 'Tailwind CSS', level: 75 },
-  { name: 'Git & GitHub', level: 70 },
+  { name: 'Laravel', level: 75 },
+  { name: 'Django', level: 70 },
 ]
 
 export default function About() {
@@ -21,7 +21,7 @@ export default function About() {
         <div className="about-content">
           <div className="about-text">
             <p>
-              Saya adalah seorang <strong>Frontend Developer</strong> yang bersemangat dalam membangun
+              Saya adalah seorang <strong>Software Development</strong> yang bersemangat dalam membangun
               antarmuka web yang menarik dan mudah digunakan. Saya menikmati setiap proses dari desain
               hingga implementasi.
             </p>
@@ -30,12 +30,11 @@ export default function About() {
               menghadirkan kode yang bersih, efisien, dan mudah di-maintain.
             </p>
             <div className="about-info">
-              <div className="info-item"><span>Nama</span><strong>Nama Kamu</strong></div>
-              <div className="info-item"><span>Email</span><strong>email@example.com</strong></div>
+              <div className="info-item"><span>Nama</span><strong>Arif Novianto</strong></div>
+              <div className="info-item"><span>Email</span><strong>noviantoarif88@gmail.com</strong></div>
               <div className="info-item"><span>Lokasi</span><strong>Indonesia</strong></div>
-              <div className="info-item"><span>Status</span><strong>Tersedia untuk hire</strong></div>
+              <div className="info-item"><span>Nomor</span><strong>085885307312</strong></div>
             </div>
-            <a href="#contact" className="btn btn-primary">Download CV</a>
           </div>
 
           <div className="about-skills">

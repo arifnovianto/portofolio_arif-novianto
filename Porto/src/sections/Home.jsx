@@ -50,11 +50,11 @@ export default function Home() {
         </h2>
         <p className="home-desc">
           Saya seorang developer yang bersemangat membangun pengalaman web yang indah dan fungsional.
-          Spesialisasi dalam React, UI/UX, dan pengembangan front-end modern.
+          Spesialisasi dalam Software Development, UI/UX, dan Machine Learning.
         </p>
         <div className="home-actions">
           <a href="#contact" className="btn btn-primary">Hubungi Saya</a>
-          <a href="#portfolio" className="btn btn-outline">Lihat Portfolio</a>
+          <a href="/CV_ARIF NOVIANTO.pdf" download className="btn btn-outline">Download CV</a>
         </div>
       </div>
       <div className="home-image">
