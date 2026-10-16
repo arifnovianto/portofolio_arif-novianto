@@ -14,7 +14,6 @@ export default function About() {
     <section id="about" className="section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-tag">Tentang Saya</span>
           <h2 className="section-title">Kenali Saya Lebih Dekat</h2>
         </div>
 

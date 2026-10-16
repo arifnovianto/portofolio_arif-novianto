@@ -5,7 +5,7 @@ import About from './sections/About'
 import Service from './sections/Service'
 import Portfolio from './sections/Portfolio'
 import Resume from './sections/Resume'
-import Blog from './sections/Blog'
+import Sertifikat from './sections/Sertifikat'
 import Contact from './sections/Contact'
 import './App.css'
 
@@ -19,7 +19,7 @@ function App() {
         <Service />
         <Portfolio />
         <Resume />
-        <Blog />
+        <Sertifikat />
         <Contact />
       </main>
       <Footer />

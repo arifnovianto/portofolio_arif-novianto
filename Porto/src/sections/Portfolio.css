@@ -1,157 +1,109 @@
 .filter-tabs {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 8px 22px;
+  padding: 6px 18px;
   border-radius: 20px;
-  border: 2px solid #e5e4e7;
+  border: 1.5px solid rgba(29, 200, 200, 0.2);
   background: transparent;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
-  color: #6b6375;
+  color: #8ab4be;
   cursor: pointer;
   transition: all 0.2s;
+  font-family: inherit;
 }
-
-.filter-btn:hover {
-  border-color: #aa3bff;
-  color: #aa3bff;
-}
-
+.filter-btn:hover { border-color: #1dc8c8; color: #1dc8c8; }
 .filter-btn.active {
-  background: #aa3bff;
-  border-color: #aa3bff;
-  color: #fff;
-  font-weight: 600;
+  background: #1dc8c8;
+  border-color: #1dc8c8;
+  color: #0a1a20;
+  font-weight: 700;
+  box-shadow: 0 3px 12px rgba(29, 200, 200, 0.25);
 }
 
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 
 .portfolio-card {
-  background: #fff;
-  border: 1px solid #e5e4e7;
-  border-radius: 16px;
+  background: rgba(13, 33, 41, 0.6);
+  border: 1px solid rgba(29, 200, 200, 0.1);
+  border-radius: 14px;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  backdrop-filter: blur(8px);
 }
-
 .portfolio-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  border-color: rgba(29, 200, 200, 0.3);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
 .portfolio-thumb {
-  height: 180px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .thumb-icon {
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 800;
   font-family: monospace;
-  opacity: 0.7;
+  color: rgba(29, 200, 200, 0.45);
 }
 
-.portfolio-info {
-  padding: 20px;
-  text-align: left;
-}
+.portfolio-info { padding: 14px 16px; text-align: left; }
 
 .portfolio-category {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #aa3bff;
+  color: #1dc8c8;
 }
 
 .portfolio-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  color: #08060d;
-  margin: 6px 0 8px;
+  color: #d6eef2;
+  margin: 4px 0 6px;
 }
 
 .portfolio-desc {
-  font-size: 14px;
-  color: #6b6375;
-  line-height: 1.6;
-  margin: 0 0 14px;
+  font-size: 12px;
+  color: #8ab4be;
+  line-height: 1.55;
+  margin: 0 0 10px;
 }
 
 .portfolio-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 5px;
+  margin-bottom: 12px;
 }
 
 .tech-tag {
-  font-size: 12px;
-  padding: 3px 10px;
-  background: rgba(170, 59, 255, 0.08);
-  color: #aa3bff;
-  border-radius: 12px;
-  font-weight: 500;
-}
-
-.portfolio-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.btn-sm {
-  padding: 8px 18px;
-  font-size: 13px;
+  font-size: 10px;
+  padding: 2px 8px;
+  background: rgba(29, 200, 200, 0.08);
+  color: #1dc8c8;
   border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(29, 200, 200, 0.15);
 }
 
-@media (max-width: 900px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+.portfolio-actions { display: flex; gap: 8px; }
+.btn-sm { padding: 7px 14px; font-size: 12px; border-radius: 7px; }
 
-@media (max-width: 560px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .filter-btn {
-    border-color: #2e303a;
-    color: #9ca3af;
-  }
-  .filter-btn:hover {
-    border-color: #c084fc;
-    color: #c084fc;
-  }
-  .filter-btn.active {
-    background: #c084fc;
-    border-color: #c084fc;
-    color: #fff;
-  }
-  .portfolio-card {
-    background: #1f2028;
-    border-color: #2e303a;
-  }
-  .portfolio-title { color: #f3f4f6; }
-  .portfolio-desc { color: #9ca3af; }
-  .portfolio-category { color: #c084fc; }
-  .tech-tag {
-    background: rgba(192, 132, 252, 0.12);
-    color: #c084fc;
-  }
-}
+@media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .portfolio-grid { grid-template-columns: 1fr; } }

@@ -3,37 +3,37 @@ import './Resume.css'
 
 const experiences = [
   {
-    period: '2024 - Sekarang',
-    title: 'Frontend Developer',
-    company: 'PT. Teknologi Maju',
-    desc: 'Membangun dan mengembangkan antarmuka web menggunakan React JS dan Tailwind CSS.',
+    period: 'Oktober 2025 - Desember 2025',
+    title: 'Junior Software Development ',
+    company: 'Faculty of Computer Science, University of Indonesia.',
+    desc: 'Bertanggung Jawab Pembuatan Pengenalan Wajah Berbasis Web menggunakan stack REACT-DJANGO.',
   },
   {
-    period: '2023 - 2024',
-    title: 'Junior Web Developer',
-    company: 'Startup Digital',
-    desc: 'Berkontribusi dalam pengembangan fitur-fitur website menggunakan HTML, CSS, dan JavaScript.',
+    period: 'Juni 2025 - Agustus 2025',
+    title: 'Koordinator Publikasi, Dokumentasi & Desain (PDD) ',
+    company: 'Kuliah Kerja Nyata',
+    desc: 'Bertanggung Jawab atas apa yang terjadi dilapangan dari segi Publikasi,Dokumentasi & Desain.',
   },
   {
-    period: '2022 - 2023',
-    title: 'Web Design Intern',
-    company: 'Creative Agency',
-    desc: 'Magang sebagai desainer web, membuat mockup dan prototype menggunakan Figma.',
+    period: 'Februari 2022 - Mei 2023',
+    title: 'Dekorasi Citayam',
+    company: 'UI/UX Designer ',
+    desc: 'Bertanggung jawab merancang antarmuka website yang menarik, fungsional, dan ramah pengguna.',
   },
 ]
 
 const educations = [
   {
-    period: '2020 - 2024',
-    title: 'S1 Teknik Informatika',
-    institution: 'Universitas Teknologi Indonesia',
-    desc: 'Lulus dengan predikat cumlaude, fokus pada pengembangan perangkat lunak.',
+    period: '2022 - 2026',
+    title: 'Universitas Islam Negeri Syarif Hidayatullah Jakarta.',
+    institution: 'Teknik Informatika, GPA : 3.77.',
+    
   },
   {
-    period: '2018 - 2020',
-    title: 'Kursus Web Development',
-    institution: 'Dicoding Academy',
-    desc: 'Menyelesaikan program front-end dan back-end web development.',
+    period: '2019 - 2022',
+    title: 'SMAS Sejahtera 1 Depok',
+    institution: 'IPA',
+    
   },
 ]
 
@@ -88,7 +88,6 @@ export default function Resume() {
             </div>
           </div>
         </div>
-
         <div className="resume-cta">
           <a href="/CV_ARIF NOVIANTO.pdf" download className="btn btn-primary">Download CV Lengkap</a>
         </div>

@@ -1,103 +1,78 @@
 .resume-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 40px;
 }
 
 .resume-col-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  color: #08060d;
-  margin: 0 0 28px;
+  color: #d6eef2;
+  margin: 0 0 20px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.col-icon {
-  font-size: 22px;
-}
+.col-icon { font-size: 20px; }
 
 .timeline {
   position: relative;
-  padding-left: 24px;
-  border-left: 2px solid #e5e4e7;
+  padding-left: 22px;
+  border-left: 2px solid rgba(29, 200, 200, 0.15);
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
+.timeline-item:last-child { margin-bottom: 0; }
 
 .timeline-dot {
   position: absolute;
-  left: -31px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
+  left: -29px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #aa3bff;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.2);
+  background: #1dc8c8;
+  border: 2px solid #0a1a20;
+  box-shadow: 0 0 8px rgba(29, 200, 200, 0.5);
 }
 
-.timeline-content {
-  text-align: left;
-}
+.timeline-content { text-align: left; }
 
 .timeline-period {
-  font-size: 13px;
-  font-weight: 600;
-  color: #aa3bff;
-  letter-spacing: 0.5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1dc8c8;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
 .timeline-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
-  color: #08060d;
-  margin: 6px 0 4px;
+  color: #d6eef2;
+  margin: 4px 0 2px;
 }
 
 .timeline-place {
-  font-size: 14px;
-  color: #6b6375;
+  font-size: 13px;
+  color: #4d7a87;
   font-weight: 500;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
 .timeline-desc {
-  font-size: 14px;
-  color: #6b6375;
-  line-height: 1.6;
+  font-size: 13px;
+  color: #8ab4be;
+  line-height: 1.55;
   margin: 0;
 }
 
-.resume-cta {
-  text-align: center;
-  margin-top: 48px;
-}
+.resume-cta { text-align: center; margin-top: 36px; }
 
 @media (max-width: 768px) {
-  .resume-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .resume-col-title { color: #f3f4f6; }
-  .timeline { border-left-color: #2e303a; }
-  .timeline-dot {
-    background: #c084fc;
-    border-color: #16171d;
-    box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.2);
-  }
-  .timeline-period { color: #c084fc; }
-  .timeline-title { color: #f3f4f6; }
-  .timeline-place, .timeline-desc { color: #9ca3af; }
+  .resume-grid { grid-template-columns: 1fr; gap: 32px; }
 }
