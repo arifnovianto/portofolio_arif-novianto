@@ -22,7 +22,6 @@ export default function Portfolio() {
     <section id="portfolio" className="section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-tag">Portfolio</span>
           <h2 className="section-title">Proyek Terbaru Saya</h2>
           <p className="section-subtitle">
             Kumpulan proyek yang telah saya kerjakan dengan dedikasi dan semangat belajar.

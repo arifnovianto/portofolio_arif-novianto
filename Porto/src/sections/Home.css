@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
-  padding: 100px 32px 60px;
+  padding: 80px 32px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 64px;
 }
 
 /* Decorative glow blob di belakang */

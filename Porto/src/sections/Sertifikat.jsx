@@ -70,7 +70,6 @@ export default function Sertifikat() {
     <section id="sertifikat" className="section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-tag">Sertifikat</span>
           <h2 className="section-title">Sertifikasi & Pencapaian</h2>
           <p className="section-subtitle">
             Sertifikat yang telah saya raih dari berbagai platform pembelajaran online.

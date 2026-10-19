@@ -9,9 +9,11 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
 }
 
 .footer-logo { font-size: 18px; font-weight: 800; color: #d6eef2; }

@@ -68,11 +68,17 @@ export default function Navbar() {
     const el = document.querySelector(href)
     if (!el) return
 
-    // Tandai sedang klik-scroll agar observer tidak override
     isClickScrolling.current = true
-    el.scrollIntoView({ behavior: 'smooth' })
 
-    // Setelah animasi scroll selesai (~800ms), biarkan observer jalan lagi
+    // Khusus Home → scroll ke paling atas (y=0)
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      // Kompensasi navbar 64px agar konten tidak tertutup
+      const offsetTop = el.getBoundingClientRect().top + window.scrollY - 64
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' })
+    }
+
     setTimeout(() => { isClickScrolling.current = false }, 900)
   }
 

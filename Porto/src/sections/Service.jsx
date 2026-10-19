@@ -29,7 +29,6 @@ export default function Service() {
     <section id="service" className="section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-tag">Layanan</span>
           <h2 className="section-title">Apa yang Saya Tawarkan</h2>
           <p className="section-subtitle">
             Saya menyediakan berbagai layanan pengembangan web untuk membantu bisnis dan proyek Anda berkembang.

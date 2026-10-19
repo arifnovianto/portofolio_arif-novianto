@@ -1,11 +1,12 @@
 /* ===== Shared section styles — dark teal theme ===== */
 .section {
   min-height: 100vh;
-  padding: 80px 32px;
+  padding: 48px 32px 80px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-margin-top: 64px;
 }
 
 .section-inner {

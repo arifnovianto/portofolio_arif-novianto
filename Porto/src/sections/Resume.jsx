@@ -42,7 +42,6 @@ export default function Resume() {
     <section id="resume" className="section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-tag">Resume</span>
           <h2 className="section-title">Pengalaman & Pendidikan</h2>
           <p className="section-subtitle">
             Perjalanan profesional dan pendidikan yang membentuk saya menjadi developer seperti sekarang.
@@ -87,9 +86,6 @@ export default function Resume() {
               ))}
             </div>
           </div>
-        </div>
-        <div className="resume-cta">
-          <a href="/CV_ARIF NOVIANTO.pdf" download className="btn btn-primary">Download CV Lengkap</a>
         </div>
       </div>
     </section>
