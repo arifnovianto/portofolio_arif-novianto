@@ -4,7 +4,7 @@ import './Service.css'
 const services = [
   {
     icon: '💻',
-    title: 'Web Development',
+    title: 'Software Development',
     desc: 'Membangun website modern yang responsif menggunakan teknologi terkini seperti React dan Vite.',
   },
   {
@@ -14,14 +14,10 @@ const services = [
   },
   {
     icon: '📱',
-    title: 'Responsive Design',
+    title: 'Computer Vision,Machine Learning dan Artificial Intelligence',
     desc: 'Memastikan website tampil sempurna di semua perangkat, dari desktop hingga mobile.',
   },
-  {
-    icon: '🔧',
-    title: 'Web Maintenance',
-    desc: 'Menyediakan layanan pemeliharaan dan pembaruan website agar selalu berjalan optimal.',
-  },
+  
 ]
 
 export default function Service() {

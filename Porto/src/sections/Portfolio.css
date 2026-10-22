@@ -48,10 +48,26 @@
 }
 
 .portfolio-thumb {
-  height: 110px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-thumb-img {
+  transform: scale(1.05);
 }
 
 .thumb-icon {
