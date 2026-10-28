@@ -1,85 +1,252 @@
 .about-content {
   display: flex;
-  gap: 48px;
+  gap: 40px;
   align-items: flex-start;
 }
 
-.about-text { flex: 1; text-align: left; }
-
-.about-text p {
-  color: #8ab4be;
-  line-height: 1.7;
-  margin-bottom: 12px;
-  font-size: 15px;
+/* ── Slide animations ── */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.4, 1);
+  transition-delay: 0.15s;
+}
+.slide-left.visible,
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.about-text p strong { color: #1dc8c8; }
+/* ══════════════════════════════
+   Kiri — Bio & Info
+══════════════════════════════ */
+.about-text {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
+/* Card bio */
+.bio-card {
+  position: relative;
+  background: rgba(13, 33, 41, 0.7);
+  border: 1px solid rgba(29, 200, 200, 0.15);
+  border-radius: 14px;
+  padding: 16px 18px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.bio-card-glow {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(29,200,200,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bio-card p {
+  color: #8ab4be;
+  line-height: 1.65;
+  font-size: 13.5px;
+  margin: 0 0 8px;
+  position: relative;
+  z-index: 1;
+}
+.bio-card p:last-child { margin-bottom: 0; }
+.bio-card p strong { color: #1dc8c8; font-weight: 700; }
+
+/* Grid info cards */
 .about-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 20px 0 24px;
+  gap: 8px;
 }
 
-.info-item {
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(13, 33, 41, 0.6);
+  border: 1px solid rgba(29, 200, 200, 0.1);
+  border-radius: 12px;
+  padding: 11px 14px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow kiri sesuai warna card */
+.info-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--card-color, #1dc8c8);
+  border-radius: 12px 0 0 12px;
+  opacity: 0.7;
+  transition: opacity 0.25s;
+}
+
+.info-card:hover {
+  border-color: var(--card-color, #1dc8c8);
+  transform: translateY(-2px) translateX(3px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2), -2px 0 12px var(--card-color, #1dc8c8)22;
+}
+
+.info-card:hover::before {
+  opacity: 1;
+}
+
+.info-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--card-color, #1dc8c8) 15%, transparent);
+  border-radius: 8px;
+  color: var(--card-color, #1dc8c8);
+  flex-shrink: 0;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.info-card:hover .info-icon-wrap {
+  background: color-mix(in srgb, var(--card-color, #1dc8c8) 25%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--card-color, #1dc8c8) 40%, transparent);
+}
+
+.info-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
+  min-width: 0;
 }
 
-.info-item span {
-  font-size: 11px;
+.info-label {
+  display: block;
+  font-size: 10px;
   color: #4d7a87;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-.info-item strong {
-  font-size: 14px;
+.info-value {
+  font-size: 12.5px;
   color: #d6eef2;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.about-skills { flex: 1; text-align: left; }
+/* ══════════════════════════════
+   Kanan — Circular Skills
+══════════════════════════════ */
+.about-skills {
+  flex: 1;
+  text-align: center;
+}
+
+/* Card wrapper skills */
+.skills-card {
+  position: relative;
+  background: rgba(13, 33, 41, 0.7);
+  border: 1px solid rgba(29, 200, 200, 0.15);
+  border-radius: 14px;
+  padding: 20px 18px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+/* Glow sudut kanan bawah */
+.skills-card-glow {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(29,200,200,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
 
 .about-skills h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #d6eef2;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-.skill-item { margin-bottom: 16px; }
+.skills-circles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
 
-.skill-header {
+.circle-skill {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 7px;
-  font-size: 13px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.circle-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px dashed;
+  animation: spin 10s linear infinite;
+  opacity: 0.45;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.circle-name {
+  font-size: 12px;
   font-weight: 600;
   color: #8ab4be;
+  margin: 0;
+  text-align: center;
 }
 
-.skill-bar {
-  height: 6px;
-  background: rgba(29, 200, 200, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #1dc8c8, #0e8e8e);
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(29, 200, 200, 0.3);
-  transition: width 0.8s ease;
-}
-
+/* ══════════════════════════════
+   Responsive
+══════════════════════════════ */
 @media (max-width: 900px) {
-  .about-content { flex-direction: column; gap: 32px; }
+  .about-content { flex-direction: column; gap: 24px; }
 }
+
 @media (max-width: 480px) {
   .about-info { grid-template-columns: 1fr; }
+  .skills-circles { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }

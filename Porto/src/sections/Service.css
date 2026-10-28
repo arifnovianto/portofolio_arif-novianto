@@ -1,40 +1,123 @@
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
+/* ── Card ── */
 .service-card {
-  background: rgba(13, 33, 41, 0.6);
+  position: relative;
+  background: rgba(13, 33, 41, 0.65);
   border: 1px solid rgba(29, 200, 200, 0.1);
-  border-radius: 14px;
-  padding: 24px 20px;
-  text-align: left;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  overflow: hidden;
   backdrop-filter: blur(8px);
+  cursor: default;
+
+  /* Animasi masuk dari bawah */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease,
+              border-color 0.25s, box-shadow 0.25s;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(29, 200, 200, 0.3);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3), 0 0 16px rgba(29, 200, 200, 0.05);
+  border-color: var(--card-color, #1dc8c8);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.25),
+    0 0 0 1px var(--card-color, #1dc8c8)33,
+    inset 0 0 30px var(--card-color, #1dc8c8)08;
+  transform: translateY(-4px);
 }
 
-.service-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+/* Strip warna di atas */
+.service-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-color, #1dc8c8);
+  border-radius: 16px 16px 0 0;
+  opacity: 0.8;
+  transition: opacity 0.25s;
+}
+.service-card:hover .service-strip { opacity: 1; }
+
+/* Glow radial di pojok kiri atas */
+.service-glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, var(--card-color, #1dc8c8) 0%, transparent 70%);
+  opacity: 0.06;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.service-card:hover .service-glow { opacity: 0.12; }
+
+/* Icon */
+.service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card-color, #1dc8c8) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-color, #1dc8c8) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-color, #1dc8c8);
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.25s, background 0.25s;
+}
+.service-card:hover .service-icon-wrap {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--card-color, #1dc8c8) 35%, transparent);
+  background: color-mix(in srgb, var(--card-color, #1dc8c8) 20%, transparent);
+}
 
 .service-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: #d6eef2;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.4;
 }
 
 .service-desc {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #8ab4be;
-  line-height: 1.65;
+  line-height: 1.7;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 900px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
+/* Nomor dekoratif */
+.service-number {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--card-color, #1dc8c8);
+  opacity: 0.06;
+  font-family: system-ui;
+  line-height: 1;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+.service-card:hover .service-number { opacity: 0.12; }
+
+@media (max-width: 900px) { .service-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }

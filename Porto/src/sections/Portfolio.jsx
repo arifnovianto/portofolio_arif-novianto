@@ -59,7 +59,7 @@ const projects = [
     tech: ['Figma', 'Adobe XD'],
     desc: 'Desain aplikasi perjalanan wisata dengan UX yang menyenangkan.',
     color: '#f43f5e',
-    image: '',
+    image: '/portofolio/dekor.png',
     demo: '#',
     repo: '#',
   },
