@@ -50,7 +50,7 @@ export default function Home() {
         </h2>
         <p className="home-desc">
           Saya seorang developer yang bersemangat membangun pengalaman web yang indah dan fungsional.
-          Spesialisasi dalam Software Development, UI/UX, dan Machine Learning.
+          Spesialisasi dalam Software Development, Computer Vision dan Machine Learning.
         </p>
         <div className="home-actions">
           <a href="#contact" className="btn btn-primary">Hubungi Saya</a>

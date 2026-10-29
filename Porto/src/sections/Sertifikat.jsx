@@ -6,14 +6,15 @@ const sertifikatList = [
   { id: 1,  title: 'Final Exam Java Programming',              issuer: 'Oracle Academy',         date: 'Juni 2023',      image: '/sertifikat/Java Programing_final.jpg',  color: '#aa3bff' },
   { id: 2,  title: 'Introduction to Networks',                 issuer: 'Cisco Network Academy',  date: 'Desember 2023',  image: '/sertifikat/CISCO1.jpg',                 color: '#6366f1' },
   { id: 3,  title: 'Switching Routing and Wireless Essentials',issuer: 'Cisco Network Academy',  date: 'Desember 2023',  image: '/sertifikat/CISCO2.jpg',                 color: '#f59e0b' },
-  { id: 4,  title: 'Final Exam Java Fundamentals',             issuer: 'Oracle Academy',         date: 'Mei 2023',       image: '/sertifikat/Java Fundamental_Final.jpg', color: '#10b981' },
-  { id: 5,  title: 'Bootcamp Basic Web Development',           issuer: 'Himti',                  date: 'April 2024',     image: '/sertifikat/frontend.jpg',               color: '#f43f5e' },
-  { id: 6,  title: 'Java Programming',                         issuer: 'Oracle Academy',         date: 'Juni 2023',      image: '/sertifikat/java Programing.jpg',         color: '#0ea5e9' },
-  { id: 7,  title: 'Java Fundamentals',                        issuer: 'Oracle Academy',         date: 'Mei 2023',       image: '/sertifikat/Java Fundamental.jpg',        color: '#f43f5e' },
-  { id: 8,  title: 'Bootcamp UI/UX Design',                   issuer: 'Himiti',                 date: 'Agustus 2024',   image: '/sertifikat/BootcampUI.png',              color: '#0ea5e9' },
-  { id: 9,  title: 'AI Basics: Overview of AI',               issuer: 'Huawei',                 date: 'November 2023',  image: '/sertifikat/SERTIFIKAT AI-HUAWEI.png',   color: '#f43f5e' },
-  { id: 10, title: 'HCIA-Datacom V1.0 Course',                issuer: 'Huawei',                 date: 'November 2024',  image: '/sertifikat/SERTIFIKAT HUAWEI.png',      color: '#0ea5e9' },
-  { id: 11, title: 'Microsoft Excel Fundamental',             issuer: 'Yureka Education Center',date: 'Oktober 2026',  image: '/sertifikat/excel.jpg',                  color: '#10b981' },
+  { id: 4,  title: 'Enterprise Networking, Security, and Automation',issuer: 'Cisco Network Academy',  date: 'Desember 2023',  image: '/sertifikat/CISCO3.jpg',                 color: '#aa3bff' },
+  { id: 5,  title: 'Final Exam Java Fundamentals',             issuer: 'Oracle Academy',         date: 'Mei 2023',       image: '/sertifikat/Java Fundamental_Final.jpg', color: '#10b981' },
+  { id: 6,  title: 'Bootcamp Basic Web Development',           issuer: 'Himti',                  date: 'April 2024',     image: '/sertifikat/frontend.jpg',               color: '#f43f5e' },
+  { id: 7,  title: 'Java Programming',                         issuer: 'Oracle Academy',         date: 'Juni 2023',      image: '/sertifikat/java Programing.jpg',         color: '#0ea5e9' },
+  { id: 8,  title: 'Java Fundamentals',                        issuer: 'Oracle Academy',         date: 'Mei 2023',       image: '/sertifikat/Java Fundamental.jpg',        color: '#f43f5e' },
+  { id: 9,  title: 'Bootcamp UI/UX Design',                   issuer: 'Himiti',                 date: 'Agustus 2024',   image: '/sertifikat/BootcampUI.png',              color: '#0ea5e9' },
+  { id: 10,  title: 'AI Basics: Overview of AI',               issuer: 'Huawei',                 date: 'November 2023',  image: '/sertifikat/SERTIFIKAT AI-HUAWEI.png',   color: '#f43f5e' },
+  { id: 11, title: 'HCIA-Datacom V1.0 Course',                issuer: 'Huawei',                 date: 'November 2024',  image: '/sertifikat/SERTIFIKAT HUAWEI.png',      color: '#0ea5e9' },
+  { id: 12, title: 'Microsoft Excel Fundamental',             issuer: 'Yureka Education Center',date: 'Oktober 2026',  image: '/sertifikat/excel.jpg',                  color: '#10b981' },
 ]
 
 export default function Sertifikat() {

@@ -20,8 +20,8 @@ const services = [
         <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm-1-11h2v6h-2zm0 8h2v2h-2z"/>
       </svg>
     ),
-    title: 'UI/UX Design',
-    desc: 'Merancang tampilan antarmuka yang menarik, intuitif, dan berpusat pada pengalaman pengguna terbaik.',
+    title: 'Computer Vision & AI',
+    desc: 'Membangun solusi Computer Vision dan Artificial Intelligence untuk menganalisis dan menyelesaikan masalah kompleks.',
   },
   {
     color: '#f59e0b',
@@ -30,8 +30,8 @@ const services = [
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
       </svg>
     ),
-    title: 'Computer Vision & AI',
-    desc: 'Membangun solusi Computer Vision, Machine Learning, dan Artificial Intelligence untuk menganalisis dan menyelesaikan masalah kompleks.',
+    title: 'Machine Learning & Design System',
+    desc: 'Menganalisi data serta Merancang tampilan antarmuka yang menarik, intuitif, dan berpusat pada pengalaman pengguna terbaik.',
   },
 ]
 

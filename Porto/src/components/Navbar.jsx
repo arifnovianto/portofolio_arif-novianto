@@ -24,40 +24,40 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ── IntersectionObserver — update active saat scroll ──────────
+  // ── Update active saat scroll ──────────────────────────────────
   useEffect(() => {
-    const sectionIds = navLinks.map(l => l.href.slice(1)) // ['home','about',...]
+    const sectionIds = navLinks.map(l => l.href.slice(1))
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Abaikan selama smooth-scroll dari klik
-        if (isClickScrolling.current) return
+    const updateActive = () => {
+      if (isClickScrolling.current) return
 
-        // Ambil section yang paling banyak terlihat
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+      // Cari section yang top-nya paling dekat dengan 0 (tepat di viewport atas)
+      // tapi sudah lewat navbar (< navbarHeight)
+      const navbarHeight = 80
 
-        if (visible.length > 0) {
-          const id    = visible[0].target.id
-          const found = navLinks.find(l => l.href === `#${id}`)
-          if (found) setActive(found.label)
+      let activeId = sectionIds[0]
+      let minDistance = Infinity
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        const rect = el.getBoundingClientRect()
+        // Jarak dari top navbar ke top section
+        const distance = Math.abs(rect.top - navbarHeight)
+        // Section yang top-nya sudah masuk atau lewat navbar
+        if (rect.top <= navbarHeight + 10 && distance < minDistance) {
+          minDistance = distance
+          activeId = id
         }
-      },
-      {
-        // Section dianggap aktif saat 30% area-nya terlihat
-        // rootMargin negatif atas agar navbar tidak menutupi deteksi
-        rootMargin: '-64px 0px -40% 0px',
-        threshold: [0, 0.1, 0.3, 0.5],
       }
-    )
 
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+      const found = navLinks.find(l => l.href === `#${activeId}`)
+      if (found) setActive(found.label)
+    }
 
-    return () => observer.disconnect()
+    window.addEventListener('scroll', updateActive, { passive: true })
+    updateActive()
+    return () => window.removeEventListener('scroll', updateActive)
   }, [])
 
   // ── Klik menu ─────────────────────────────────────────────────
