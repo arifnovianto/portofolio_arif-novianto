@@ -3,7 +3,7 @@ import './Section.css'
 import './Contact.css'
 
 const contactInfo = [
-  { icon: '📍', label: 'Lokasi',    value: 'Jakarta, Indonesia',       color: '#f43f5e' },
+  { icon: '📍', label: 'Lokasi',    value: 'Depok , Jawa Barat.',       color: '#f43f5e' },
   { icon: '📧', label: 'Email',     value: 'noviantoarif88@gmail.com', color: '#1dc8c8' },
   { icon: '📱', label: 'WhatsApp',  value: '+62 858-8530-7312',        color: '#10b981' },
 ]
