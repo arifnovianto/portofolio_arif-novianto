@@ -186,7 +186,10 @@
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: #2d5562; }
 
-.submit-btn { width: fit-content; font-size: 14px; position: relative; z-index: 1; }
+.submit-btn { 
+  width: fit-content; 
+ align-self: flex-end;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
