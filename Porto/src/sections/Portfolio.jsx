@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Section.css'
 import './Portfolio.css'
 
@@ -75,7 +75,27 @@ const VISIBLE = 3
 
 export default function Portfolio() {
   const [current, setCurrent] = useState(0)
-  const maxIndex = projects.length - VISIBLE
+
+  // Di mobile (≤768px) tampil 1, tablet 2, desktop 3
+  const getVisible = () => {
+    if (typeof window === 'undefined') return VISIBLE
+    if (window.innerWidth <= 480) return 1
+    if (window.innerWidth <= 768) return 2
+    return 3
+  }
+
+  const [visibleCount, setVisibleCount] = useState(getVisible)
+
+  useEffect(() => {
+    const onResize = () => {
+      setVisibleCount(getVisible())
+      setCurrent(0) // reset ke awal saat resize
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const maxIndex = Math.max(0, projects.length - visibleCount)
 
   const prev = () => setCurrent(c => Math.max(c - 1, 0))
   const next = () => setCurrent(c => Math.min(c + 1, maxIndex))
@@ -106,10 +126,10 @@ export default function Portfolio() {
           <div className="port-slider-viewport">
             <div
               className="port-slider-track"
-              style={{ transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 6px)))` }}
+              style={{ transform: `translateX(calc(-${current} * (100% / ${visibleCount} + 6px)))` }}
             >
               {projects.map(({ id, title, category, tech, desc, color, image, demo, repo }) => (
-                <div key={id} className="portfolio-card">
+                <div key={id} className="portfolio-card" style={{ flex: `0 0 calc((100% - ${(visibleCount-1) * 16}px) / ${visibleCount})` }}>
                   {/* Thumb */}
                   <div
                     className="portfolio-thumb"

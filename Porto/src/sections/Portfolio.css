@@ -67,7 +67,6 @@
 
 /* ── Card ── */
 .portfolio-card {
-  flex: 0 0 calc((100% - 32px) / 3);
   background: rgba(13, 33, 41, 0.6);
   border: 1px solid rgba(29, 200, 200, 0.1);
   border-radius: 14px;
@@ -168,10 +167,10 @@
 .btn-sm { padding: 7px 14px; font-size: 12px; border-radius: 7px; }
 
 @media (max-width: 768px) {
-  .portfolio-card { flex: 0 0 calc((100% - 16px) / 2); }
-}
-@media (max-width: 480px) {
-  .portfolio-card { flex: 0 0 100%; }
   .port-slider-outer { gap: 8px; }
   .port-slider-btn { width: 36px; height: 36px; font-size: 22px; }
+}
+@media (max-width: 480px) {
+  .port-slider-outer { gap: 6px; }
+  .port-slider-btn { width: 32px; height: 32px; font-size: 20px; }
 }
