@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './Home.css'
 import heroImg from '../assets/foto_profile.jpg'
 
-const roles = ['FullStack Developer', 'Computer Vision', 'UI/UX Designer']
+const roles = ['Software Developer', 'Computer Vision', 'Design System']
 
 export default function Home() {
   const [roleIndex, setRoleIndex] = useState(0)
