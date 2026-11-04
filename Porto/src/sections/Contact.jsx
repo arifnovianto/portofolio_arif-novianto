@@ -31,7 +31,7 @@ const socials = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/arif-novianto',
+    href: 'https://www.linkedin.com/in/arif-novianto24/',
     color: '#0077b5',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
